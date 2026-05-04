@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Bienestar y Salud Laboral — Soluciones integrales para empresas</title>
+<meta name="description" content="Medicina ocupacional, salud mental, telemedicina y plataformas médicas para empresas. Soluciones integrales de bienestar laboral con cobertura nacional y tecnología propia." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Figtree:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --lime:#cce70b;
+    --green:#80c41c;
+    --cyan:#00a0c6;
+    --navy:#005a72;
+    --navy-2:#003a4a;
+    --ink:#0f2a33;
+    --ink-2:#22414b;
+    --muted:#4a6770;
+    --line:#E2EBEE;
+    --bg:#ffffff;
+    --bg-alt:#F3F8FA;
+    --bg-tint:#E4F4F8;
+    --accent:#00a0c6;
+    --accent-2:#007a99;
+    --teal:#80c41c;
+    --teal-dark:#5fa015;
+    --coral:#cce70b;
+    --soft:#F4FBE0;
+    --gold:#cce70b;
+    --radius:18px;
+    --shadow-sm:0 1px 2px rgba(16,42,67,.06),0 1px 1px rgba(16,42,67,.04);
+    --shadow:0 10px 30px rgba(10,31,68,.08),0 2px 6px rgba(10,31,68,.04);
+    --shadow-lg:0 30px 60px rgba(10,31,68,.14),0 6px 18px rgba(10,31,68,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  h1,h2,h3,h4{font-family:"Figtree","Inter",sans-serif;color:var(--navy-2);letter-spacing:-.02em;margin:0 0 .5em}
+  h1{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:800;line-height:1.05}
+  h2{font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;line-height:1.1}
+  h3{font-size:1.25rem;font-weight:700;line-height:1.25}
+  h4{font-size:1.02rem;font-weight:700}
+  p{margin:0 0 1em;color:var(--ink-2)}
+  a{color:var(--accent-2);text-decoration:none}
+  a:hover{text-decoration:underline}
+  img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    display:inline-block;font-weight:600;font-size:.8rem;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-2);margin-bottom:14px;
+  }
+  .lead{font-size:1.12rem;color:var(--muted);max-width:60ch}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 22px;border-radius:999px;font-weight:600;font-size:.95rem;
+    transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+    border:1px solid transparent;cursor:pointer;
+  }
+  .btn-primary{background:var(--navy);color:#fff}
+  .btn-primary:hover{background:#001E40;text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow)}
+  .btn-accent{background:var(--accent);color:#fff}
+  .btn-accent:hover{background:var(--accent-2);text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow)}
+  .btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+  .btn-ghost:hover{background:var(--bg-alt);text-decoration:none}
+  .btn-link{padding:0;background:none;color:var(--accent-2);font-weight:600}
+  .btn-link:hover{text-decoration:underline}
+
+  /* NAV */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:"Figtree",sans-serif;font-weight:800;color:var(--navy-2);text-decoration:none}
+  .brand:hover{text-decoration:none}
+  .brand-mark{
+    height:64px;width:auto;display:block;
+  }
+  .brand-name{font-size:1.05rem;line-height:1;display:block}
+  .brand-sub{display:block;font-size:.7rem;font-weight:500;color:var(--muted);letter-spacing:.06em;margin-top:3px;text-transform:uppercase}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{color:var(--ink);font-weight:500;font-size:.95rem}
+  .nav-links a:hover{color:var(--accent-2);text-decoration:none}
+  .nav-cta{display:flex;gap:10px;align-items:center}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.5rem;color:var(--navy);cursor:pointer}
+  @media (max-width:880px){
+    .nav-links{display:none}
+    .nav-cta .btn-ghost{display:none}
+    .menu-toggle{display:block}
+    .nav.open .nav-links{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:#fff;border-bottom:1px solid var(--line);padding:16px 24px;gap:14px;
+    }
+  }
+
+  /* HERO */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse at 80% 0%,rgba(0,160,198,.12),transparent 50%),
+      radial-gradient(ellipse at 0% 100%,rgba(128,196,28,.10),transparent 55%),
+      radial-gradient(ellipse at 100% 100%,rgba(204,231,11,.08),transparent 50%),
+      linear-gradient(180deg,#F6FAFC 0%,#FFFFFF 100%);
+    padding:80px 0 90px;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid var(--line);
+    padding:6px 14px;border-radius:999px;font-size:.82rem;font-weight:600;
+    color:var(--ink);box-shadow:var(--shadow-sm);margin-bottom:22px;
+  }
+  .hero-tag .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(0,133,124,.18)}
+  .hero h1 span.grad{
+    background:linear-gradient(90deg,var(--cyan),var(--green) 70%,var(--lime));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p.lead{font-size:1.18rem;margin:18px 0 28px;color:var(--ink-2)}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px;max-width:520px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .stat b{display:block;font-family:"Figtree",sans-serif;font-size:1.5rem;color:var(--navy-2)}
+  .stat span{color:var(--muted);font-size:.82rem}
+  .hero-art{position:relative}
+  .hero-photo{
+    border-radius:24px;overflow:hidden;box-shadow:var(--shadow-lg);
+    aspect-ratio:4/5;background:linear-gradient(135deg,#cfe7f5,#e8f1f9);
+    position:relative;
+  }
+  .hero-photo svg{position:absolute;inset:0;width:100%;height:100%}
+  .hero-card{
+    position:absolute;background:#fff;border-radius:16px;padding:14px 16px;
+    box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;font-size:.9rem;
+  }
+  .hc-1{top:8%;left:-26px}
+  .hc-2{bottom:10%;right:-20px}
+  .hc-icon{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:700}
+  .hc-1 .hc-icon{background:linear-gradient(135deg,var(--cyan),var(--accent-2))}
+  .hc-2 .hc-icon{background:linear-gradient(135deg,var(--green),var(--teal-dark))}
+  .hc-card-text b{display:block;color:var(--navy-2)}
+  .hc-card-text span{color:var(--muted);font-size:.78rem}
+  @media (max-width:880px){
+    .hero{padding:54px 0 60px}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-photo{aspect-ratio:5/4;max-width:520px;margin:0 auto}
+    .hc-1{left:8px}.hc-2{right:8px}
+  }
+
+  /* TRUST STRIP */
+  .trust{padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#fff}
+  .trust-inner{display:flex;align-items:center;gap:32px;flex-wrap:wrap;justify-content:space-between}
+  .trust-label{font-size:.82rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .trust-logos{display:flex;gap:34px;flex-wrap:wrap;align-items:center}
+  .trust-logo{font-family:"Figtree",sans-serif;font-weight:700;color:var(--ink);opacity:.7;letter-spacing:.02em}
+  .trust-logo small{font-weight:500;color:var(--muted)}
+
+  /* SECTIONS */
+  section.block{padding:96px 0}
+  section.block.alt{background:var(--bg-alt)}
+  .section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:48px}
+  .section-head .lead{margin:8px 0 0}
+  @media (max-width:880px){.section-head{grid-template-columns:1fr}}
+
+  /* SERVICE CARDS GRID */
+  .grid{display:grid;gap:22px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:980px){.grid-3{grid-template-columns:repeat(2,1fr)}.grid-4{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:620px){.grid-3,.grid-2,.grid-4{grid-template-columns:1fr}}
+  .card{
+    background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+    transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+    display:flex;flex-direction:column;gap:10px;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#cfe1ee}
+  .card .icon{
+    width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+    background:var(--bg-tint);color:var(--accent-2);margin-bottom:6px;
+  }
+  .card.tinted{background:linear-gradient(180deg,#fff,#F7FBFE)}
+  .card ul{margin:6px 0 0;padding:0 0 0 18px;color:var(--ink-2);font-size:.95rem}
+  .card ul li{margin-bottom:4px}
+  .pill{
+    display:inline-block;padding:4px 10px;background:var(--soft);color:var(--teal-dark);
+    border-radius:999px;font-size:.78rem;font-weight:600;margin-right:6px;
+  }
+
+  /* OVERVIEW 4 SERVICES */
+  .ov-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;
+    position:relative;overflow:hidden;transition:.2s;
+  }
+  .ov-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+  .ov-card .num{
+    position:absolute;top:18px;right:22px;font-family:"Figtree",sans-serif;
+    color:#cfe1ee;font-weight:800;font-size:2.2rem;line-height:1;
+  }
+  .ov-card .ring{
+    width:54px;height:54px;border-radius:14px;display:grid;place-items:center;color:#fff;
+    background:linear-gradient(135deg,var(--cyan),var(--accent-2));margin-bottom:14px;
+  }
+  .ov-card.alt-1 .ring{background:linear-gradient(135deg,var(--green),var(--teal-dark));color:#fff}
+  .ov-card.alt-2 .ring{background:linear-gradient(135deg,var(--lime),var(--green));color:var(--navy-2)}
+  .ov-card.alt-3 .ring{background:linear-gradient(135deg,var(--cyan),var(--green));color:#fff}
+  .ov-card a{margin-top:auto}
+
+  /* OCC MEDICINE — split feature */
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .feature.reverse{grid-template-columns:1fr 1fr}
+  .feature .feature-img{
+    border-radius:24px;aspect-ratio:5/4;overflow:hidden;
+    background:linear-gradient(135deg,#dff1f8,#eef6fb);position:relative;
+    box-shadow:var(--shadow);
+  }
+  .feature.reverse .feature-img{background:linear-gradient(135deg,#fde6e1,#fff5f1)}
+  @media (max-width:880px){.feature,.feature.reverse{grid-template-columns:1fr;gap:34px}}
+  .check-list{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:12px}
+  .check-list li{display:flex;gap:12px;align-items:flex-start}
+  .check-list .ch{
+    flex:0 0 22px;height:22px;border-radius:50%;
+    background:rgba(0,133,124,.12);color:var(--teal);
+    display:grid;place-items:center;margin-top:2px;
+  }
+  .feature.alt .check-list .ch{background:rgba(0,166,225,.12);color:var(--accent-2)}
+
+  /* SOFTWARE PRODUCTS */
+  .product{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;
+    display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:start;
+    transition:.2s;
+  }
+  .product:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#cfe1ee}
+  .product .logo{
+    width:64px;height:64px;border-radius:16px;display:grid;place-items:center;
+    color:#fff;font-family:"Figtree",sans-serif;font-weight:800;font-size:1.1rem;
+  }
+  .product.brs .logo{background:linear-gradient(135deg,var(--green),var(--teal-dark))}
+  .product.bod .logo{background:linear-gradient(135deg,var(--lime),var(--green));color:var(--navy-2)}
+  .product.bsl .logo{background:linear-gradient(135deg,var(--cyan),var(--accent-2))}
+  .product.rip .logo{background:linear-gradient(135deg,var(--accent-2),var(--navy))}
+  .product .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .product .meta .pill{background:#F1F5F9;color:var(--ink-2)}
+
+  /* PROCESS / STEPS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+  @media (max-width:880px){.steps{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.steps{grid-template-columns:1fr}}
+  .step{
+    background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;position:relative;
+  }
+  .step .num{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    background:var(--navy);color:#fff;font-weight:700;font-family:"Figtree",sans-serif;margin-bottom:10px;
+  }
+
+  /* CTA BAND */
+  .cta-band{
+    background:linear-gradient(135deg,var(--navy-2) 0%,var(--navy) 50%,var(--accent-2) 100%);
+    color:#fff;border-radius:28px;padding:54px;display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;
+    box-shadow:var(--shadow-lg);position:relative;overflow:hidden;
+  }
+  .cta-band::after{
+    content:"";position:absolute;right:-90px;top:-90px;width:360px;height:360px;border-radius:50%;
+    background:radial-gradient(circle,rgba(204,231,11,.35),transparent 70%);
+  }
+  .cta-band::before{
+    content:"";position:absolute;left:-60px;bottom:-60px;width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(128,196,28,.25),transparent 70%);
+  }
+  .cta-band h2{color:#fff}
+  .cta-band p{color:#cfe1ee}
+  .cta-band .btn-accent{background:#fff;color:var(--navy)}
+  .cta-band .btn-accent:hover{background:#EAF3FA}
+  .cta-band .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
+  .cta-band .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  @media (max-width:880px){.cta-band{padding:36px;grid-template-columns:1fr}}
+
+  /* CONTACT */
+  .contact{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+  @media (max-width:880px){.contact{grid-template-columns:1fr}}
+  .contact-info{display:grid;gap:18px}
+  .info-row{display:flex;gap:14px;align-items:flex-start}
+  .info-row .ic{
+    width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+    background:var(--bg-tint);color:var(--accent-2);flex:0 0 44px;
+  }
+  .form{
+    background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow-sm);
+  }
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  @media (max-width:520px){.form .row{grid-template-columns:1fr}}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field label{font-size:.85rem;color:var(--ink-2);font-weight:600}
+  .field input,.field select,.field textarea{
+    border:1px solid var(--line);border-radius:12px;padding:12px 14px;
+    font:inherit;color:var(--ink);background:#fff;outline:none;transition:.15s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 4px rgba(0,166,225,.12)}
+  .form .btn{width:100%;justify-content:center;margin-top:6px}
+
+  /* FOOTER */
+  footer{background:var(--navy-2);color:#cfdde2;padding:60px 0 30px;margin-top:0;position:relative;overflow:hidden}
+  footer::before{
+    content:"";position:absolute;left:0;top:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--lime),var(--green) 50%,var(--cyan));
+  }
+  footer h4{color:#fff;font-size:.95rem;margin-bottom:14px;letter-spacing:.04em}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+  @media (max-width:880px){.foot-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:520px){.foot-grid{grid-template-columns:1fr}}
+  footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+  footer ul a{color:#a8bcd6;font-size:.92rem}
+  footer ul a:hover{color:#fff;text-decoration:none}
+  .foot-bottom{
+    margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;color:#8aa1bf;font-size:.85rem;
+  }
+  .badge-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+  .badge-list span{
+    background:rgba(255,255,255,.06);color:#cfd9e8;padding:6px 10px;border-radius:8px;font-size:.78rem;
+  }
+
+  /* Subtle reveal */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* SVG decorative */
+  .blob{position:absolute;pointer-events:none;opacity:.5}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="brand" aria-label="Inicio">
+      <img src="bsl-logo.png" alt="BSL · Bienestar y Salud Laboral" class="brand-mark" />
+    </a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#medicina">Medicina ocupacional</a>
+      <a href="#salud-mental">Salud mental</a>
+      <a href="#telemedicina">Telemedicina</a>
+      <a href="#tecnologia">Plataformas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contacto" class="btn btn-ghost">Hablar con un asesor</a>
+      <a href="#contacto" class="btn btn-primary">Solicitar propuesta</a>
+      <button class="menu-toggle" aria-label="Abrir menú" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="hero-tag"><span class="dot"></span> Plataforma integral para empresas en Colombia</span>
+      <h1>Cuidamos a tu equipo: <span class="grad">salud, bienestar y tecnología</span> en un mismo lugar.</h1>
+      <p class="lead">Conectamos a tus colaboradores con mejor salud a través de medicina ocupacional, salud mental, telemedicina y plataformas médicas propias. Cobertura nacional, profesionales certificados y software diseñado por y para el sector salud.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary">Solicitar propuesta
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#servicios" class="btn btn-ghost">Conocer servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>+29</b><span>Sedes y aliados</span></div>
+        <div class="stat"><b>500+</b><span>Profesionales de salud</span></div>
+        <div class="stat"><b>24/7</b><span>Atención telemedicina</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-photo">
+        <!-- Decorative SVG illustration: doctor & patient via abstract -->
+        <svg viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#d4eef4"/>
+              <stop offset="100%" stop-color="#eef9ec"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#00a0c6"/>
+              <stop offset="100%" stop-color="#007a99"/>
+            </linearGradient>
+            <linearGradient id="g3" x1="0" x2="1">
+              <stop offset="0%" stop-color="#80c41c"/>
+              <stop offset="100%" stop-color="#5fa015"/>
+            </linearGradient>
+            <linearGradient id="g4" x1="0" x2="1">
+              <stop offset="0%" stop-color="#cce70b"/>
+              <stop offset="100%" stop-color="#80c41c"/>
+            </linearGradient>
+          </defs>
+          <rect width="600" height="750" fill="url(#g1)"/>
+          <!-- soft circles -->
+          <circle cx="80" cy="80" r="100" fill="#fff" opacity=".55"/>
+          <circle cx="540" cy="700" r="140" fill="#fff" opacity=".45"/>
+          <circle cx="540" cy="100" r="60" fill="url(#g4)" opacity=".30"/>
+          <circle cx="60" cy="640" r="60" fill="url(#g3)" opacity=".18"/>
+
+          <!-- Connector lines between tiles -->
+          <g stroke="#cfdde2" stroke-width="2" stroke-dasharray="4 6" opacity=".7">
+            <line x1="300" y1="180" x2="300" y2="540"/>
+            <line x1="80" y1="350" x2="520" y2="350"/>
+          </g>
+
+          <!-- Center hub -->
+          <g transform="translate(300,350)">
+            <circle r="46" fill="#fff" stroke="#cfdde2" stroke-width="2"/>
+            <circle r="32" fill="url(#g4)"/>
+            <path d="M-14 0 L-6 0 L-2 -10 L4 12 L8 -4 L12 0 L18 0" stroke="#003a4a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+
+          <!-- 4 SERVICE TILES -->
+          <!-- TILE 1: Medicina Ocupacional (top-left) -->
+          <g transform="translate(50,90)">
+            <rect width="220" height="220" rx="22" fill="#fff" stroke="#E2EBEE" stroke-width="1"/>
+            <rect width="220" height="6" rx="3" fill="url(#g2)"/>
+            <g transform="translate(28,40)">
+              <rect width="48" height="48" rx="12" fill="#E4F4F8"/>
+              <g transform="translate(12,12)" stroke="#00a0c6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18M3 12h18"/>
+              </g>
+            </g>
+            <text x="28" y="130" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">Medicina</text>
+            <text x="28" y="154" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">ocupacional</text>
+            <text x="28" y="182" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">Exámenes médicos</text>
+            <text x="28" y="200" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">Riesgo psicosocial</text>
+          </g>
+
+          <!-- TILE 2: Salud Mental (top-right) -->
+          <g transform="translate(330,90)">
+            <rect width="220" height="220" rx="22" fill="#fff" stroke="#E2EBEE" stroke-width="1"/>
+            <rect width="220" height="6" rx="3" fill="url(#g3)"/>
+            <g transform="translate(28,40)">
+              <rect width="48" height="48" rx="12" fill="#F1F8E2"/>
+              <g transform="translate(12,12)" stroke="#5fa015" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 21s-7-4.35-7-10a5 5 0 019-3 5 5 0 019 3c0 5.65-7 10-7 10z"/>
+              </g>
+            </g>
+            <text x="28" y="130" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">Salud</text>
+            <text x="28" y="154" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">mental</text>
+            <text x="28" y="182" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">Psicología · psiquiatría</text>
+            <text x="28" y="200" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">Tamizaje psicológico</text>
+          </g>
+
+          <!-- TILE 3: Telemedicina (bottom-left) -->
+          <g transform="translate(50,390)">
+            <rect width="220" height="220" rx="22" fill="#fff" stroke="#E2EBEE" stroke-width="1"/>
+            <rect width="220" height="6" rx="3" fill="url(#g2)"/>
+            <g transform="translate(28,40)">
+              <rect width="48" height="48" rx="12" fill="#E4F4F8"/>
+              <g transform="translate(12,12)" stroke="#00a0c6" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="12" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+              </g>
+            </g>
+            <text x="28" y="130" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">Telemedicina</text>
+            <text x="28" y="154" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">particular</text>
+            <text x="28" y="182" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">Consulta 24/7</text>
+            <text x="28" y="200" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">Crónicos · dermatología</text>
+          </g>
+
+          <!-- TILE 4: Plataformas (bottom-right) -->
+          <g transform="translate(330,390)">
+            <rect width="220" height="220" rx="22" fill="#fff" stroke="#E2EBEE" stroke-width="1"/>
+            <rect width="220" height="6" rx="3" fill="url(#g4)"/>
+            <g transform="translate(28,40)">
+              <rect width="48" height="48" rx="12" fill="#F4FBE0"/>
+              <g transform="translate(12,12)" stroke="#5fa015" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 6h16M4 12h16M4 18h10"/>
+              </g>
+            </g>
+            <text x="28" y="130" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">Plataformas</text>
+            <text x="28" y="154" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">médicas</text>
+            <text x="28" y="182" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">BRS · Consulta Bodytech</text>
+            <text x="28" y="200" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">BSL · RIPS Digital</text>
+          </g>
+
+          <!-- floating heart pulse line -->
+          <path d="M40 680 L140 680 L160 640 L190 720 L220 660 L260 680 L560 680" stroke="#00a0c6" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".75"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="container trust-inner">
+    <span class="trust-label">Cumplimiento y respaldo</span>
+    <div class="trust-logos">
+      <div class="trust-logo">Resolución 2646 <small>Riesgo psicosocial</small></div>
+      <div class="trust-logo">Resolución 2275 <small>RIPS</small></div>
+      <div class="trust-logo">Habilitación IPS <small>Min. Salud</small></div>
+      <div class="trust-logo">SG-SST <small>Decreto 1072</small></div>
+      <div class="trust-logo">HIPAA-ready <small>Datos clínicos</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="block" id="servicios">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Portafolio de servicios</span>
+        <h2>Cuatro líneas de servicio que cubren toda la salud de tu empresa</h2>
+      </div>
+      <p class="lead">Diseñamos programas a medida que combinan atención médica, bienestar mental, atención remota y herramientas digitales que conectan a tus colaboradores con cuidado oportuno.</p>
+    </div>
+
+    <div class="grid grid-4">
+      <article class="ov-card">
+        <span class="num">01</span>
+        <div class="ring">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Medicina ocupacional</h3>
+        <p>Exámenes de ingreso, periódicos y de retiro, paraclínicos, laboratorio, unidad móvil y portal cliente.</p>
+        <a class="btn-link" href="#medicina">Ver servicios →</a>
+      </article>
+      <article class="ov-card alt-1">
+        <span class="num">02</span>
+        <div class="ring">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-7-10a5 5 0 019-3 5 5 0 019 3c0 5.65-7 10-7 10z" stroke="#fff" stroke-width="2.2"/></svg>
+        </div>
+        <h3>Salud mental</h3>
+        <p>Psicología, psiquiatría y coaching online. Programas para ansiedad, depresión, duelo, burnout y pareja.</p>
+        <a class="btn-link" href="#salud-mental">Ver servicios →</a>
+      </article>
+      <article class="ov-card alt-3">
+        <span class="num">03</span>
+        <div class="ring">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="12" rx="2" stroke="#fff" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Telemedicina particular</h3>
+        <p>Consulta médica 24/7, dermatología, manejo de crónicos, segundas opiniones y nutrición.</p>
+        <a class="btn-link" href="#telemedicina">Ver servicios →</a>
+      </article>
+      <article class="ov-card alt-2">
+        <span class="num">04</span>
+        <div class="ring">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Plataformas y software médico</h3>
+        <p>Desarrollos propios: BRS, Consulta Bodytech, BSL Plataforma 2 y RIPS Digital.</p>
+        <a class="btn-link" href="#tecnologia">Ver productos →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 1) MEDICINA OCUPACIONAL -->
+<section class="block alt" id="medicina">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">01 · Medicina ocupacional</span>
+        <h2>Salud ocupacional integral, donde la necesite tu empresa</h2>
+      </div>
+      <p class="lead">Evaluamos, prevenimos y acompañamos la salud de tus colaboradores con cobertura nacional, sedes propias, aliados estratégicos y unidad móvil que llega hasta tu operación.</p>
+    </div>
+
+    <div class="feature alt">
+      <div>
+        <h3>Evaluación médica ocupacional completa</h3>
+        <p>Realizamos las valoraciones definidas por la normativa colombiana de SG-SST con médicos especializados en salud ocupacional y resultados disponibles en línea.</p>
+        <ul class="check-list">
+          <li><span class="ch">✓</span><span><strong>Exámenes médicos ocupacionales:</strong> ingreso, periódicos, retiro, post-incapacidad y por cambio de ocupación.</span></li>
+          <li><span class="ch">✓</span><span><strong>Exámenes paraclínicos:</strong> visiometría, audiometría, espirometría, optometría, electrocardiograma y osteomuscular.</span></li>
+          <li><span class="ch">✓</span><span><strong>Laboratorio clínico:</strong> toma de muestras y análisis incluidos en la valoración.</span></li>
+          <li><span class="ch">✓</span><span><strong>Lectura ILO/OIT 2000:</strong> radiografías de tórax interpretadas según estándar internacional.</span></li>
+        </ul>
+      </div>
+      <div class="feature-img">
+        <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="480" fill="#d8eef3"/>
+          <g transform="translate(50,60)">
+            <rect width="500" height="360" rx="22" fill="#fff"/>
+            <rect x="40" y="40" width="180" height="14" rx="7" fill="#007a99"/>
+            <rect x="40" y="68" width="120" height="10" rx="5" fill="#cfe4ea"/>
+            <g transform="translate(40,110)">
+              <rect width="200" height="100" rx="14" fill="#E4F4F8"/>
+              <circle cx="40" cy="50" r="22" fill="#00a0c6"/>
+              <rect x="78" y="32" width="100" height="10" rx="5" fill="#007a99"/>
+              <rect x="78" y="50" width="80" height="8" rx="4" fill="#9bc8d4"/>
+              <rect x="78" y="66" width="90" height="8" rx="4" fill="#cfe4ea"/>
+            </g>
+            <g transform="translate(260,110)">
+              <rect width="200" height="100" rx="14" fill="#F1F8E2"/>
+              <circle cx="40" cy="50" r="22" fill="#80c41c"/>
+              <rect x="78" y="32" width="100" height="10" rx="5" fill="#5fa015"/>
+              <rect x="78" y="50" width="80" height="8" rx="4" fill="#b3d18a"/>
+              <rect x="78" y="66" width="90" height="8" rx="4" fill="#dceabf"/>
+            </g>
+            <g transform="translate(40,230)">
+              <rect width="420" height="90" rx="14" fill="#F3F8FA"/>
+              <path d="M20 60 L70 60 L80 30 L100 80 L120 40 L150 60 L400 60" stroke="#00a0c6" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div style="height:48px"></div>
+
+    <div class="grid grid-3">
+      <div class="card tinted">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 7l9-4 9 4M5 9v8a2 2 0 002 2h10a2 2 0 002-2V9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Unidad móvil</h3>
+        <p>Llevamos consultorio médico, toma de muestras, audiometría y visiometría hasta tu sede o frente de obra. Cobertura urbana en Bogotá y aliados a nivel nacional.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 19V5a2 2 0 012-2h9l5 5v11a2 2 0 01-2 2H6a2 2 0 01-2-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 13h8M8 17h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Servicios en línea</h3>
+        <p>Portal cliente con descarga de certificados, conceptos médicos e informes de condiciones de salud por área, cargo y empresa.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12l2-7h14l2 7M3 12v7h18v-7M7 12v3M11 12v3M15 12v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Formación y capacitación</h3>
+        <p>Cursos de higiene y manipulación de alimentos, capacitaciones en SG-SST y programas educativos para tus colaboradores.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Programa de vigilancia epidemiológica</h3>
+        <p>Diseño e implementación de PVE para riesgo cardiovascular, osteomuscular, auditivo y respiratorio según los hallazgos de salud.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20l-7-4V8l7-4 7 4v8l-7 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 12l7-4M12 12L5 8M12 12v8" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Diagnóstico de condiciones de salud</h3>
+        <p>Informe consolidado por empresa con análisis demográfico, perfil de morbilidad y recomendaciones para la planeación SG-SST.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h4l2-7 4 14 2-7h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Pruebas específicas por riesgo</h3>
+        <p>Trabajo en alturas, espacios confinados, conducción, manejo de alimentos y exposición a sustancias químicas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2) SALUD MENTAL -->
+<section class="block" id="salud-mental">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">02 · Salud mental</span>
+        <h2>Un espacio seguro para hablar, sentir y sanar — para tu equipo</h2>
+      </div>
+      <p class="lead">Conectamos a tus colaboradores con psicólogos y psiquiatras certificados a través de una plataforma 100 % online, con confidencialidad clínica y métricas para Recursos Humanos.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon" style="background:#F1F8E2;color:#5fa015">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-7-10a5 5 0 019-3 5 5 0 019 3c0 5.65-7 10-7 10z" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>Terapia psicológica online</h3>
+        <p>Acompañamiento profesional, sin juicios, en sesiones individuales con terapeutas certificados, agenda flexible y videoconsulta segura.</p>
+      </div>
+      <div class="card">
+        <div class="icon" style="background:#F1F8E2;color:#5fa015">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 4h6v4H9zM5 8h14v12H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 14h6M12 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Psiquiatría online</h3>
+        <p>Atención especializada con empatía y ciencia, sin estigmas. Evaluación, diagnóstico y manejo farmacológico cuando es necesario.</p>
+      </div>
+      <div class="card">
+        <div class="icon" style="background:#F1F8E2;color:#5fa015">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 18l4-12 4 8 4-6 4 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Coaching emocional</h3>
+        <p>Acompañamiento para tomar decisiones, alcanzar metas y diseñar la vida que tus colaboradores merecen.</p>
+      </div>
+      <div class="card">
+        <div class="icon" style="background:#F1F8E2;color:#5fa015">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 8h14M5 16h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Nutrición online</h3>
+        <p>Acompañamiento para construir una relación sana con la comida, sin enfoques restrictivos.</p>
+      </div>
+      <div class="card">
+        <div class="icon" style="background:#F1F8E2;color:#5fa015">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="3" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="14" r="3" stroke="currentColor" stroke-width="2"/><path d="M3 20c1-3 4-5 6-5M14 20c1-3 4-5 6-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Terapia de pareja</h3>
+        <p>Sesiones online conducidas por psicólogos formados en terapia de pareja con metodologías basadas en evidencia.</p>
+      </div>
+      <div class="card">
+        <div class="icon" style="background:#F1F8E2;color:#5fa015">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0z" stroke="currentColor" stroke-width="2"/><path d="M9 9l6 6M15 9l-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Programas especializados</h3>
+        <p>Duelo, ansiedad, depresión, tusa y burnout. Rutas estructuradas con protocolo, número de sesiones y métricas de evolución.</p>
+      </div>
+    </div>
+
+    <div style="height:56px"></div>
+
+    <!-- Tamizaje psicológico highlight -->
+    <div class="feature reverse">
+      <div class="feature-img">
+        <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="480" fill="#F4FBE0"/>
+          <g transform="translate(60,40)">
+            <rect width="480" height="400" rx="22" fill="#fff"/>
+            <rect x="30" y="30" width="180" height="14" rx="7" fill="#80c41c"/>
+            <rect x="30" y="58" width="240" height="10" rx="5" fill="#dceabf"/>
+            <g transform="translate(30,100)">
+              <rect width="420" height="60" rx="12" fill="#F1F8E2"/>
+              <circle cx="30" cy="30" r="14" fill="#80c41c"/>
+              <rect x="60" y="20" width="200" height="10" rx="5" fill="#5fa015" opacity=".8"/>
+              <rect x="60" y="36" width="140" height="8" rx="4" fill="#b3d18a"/>
+            </g>
+            <g transform="translate(30,180)">
+              <rect width="420" height="60" rx="12" fill="#F1F8E2"/>
+              <circle cx="30" cy="30" r="14" fill="#cce70b"/>
+              <rect x="60" y="20" width="220" height="10" rx="5" fill="#5fa015" opacity=".8"/>
+              <rect x="60" y="36" width="160" height="8" rx="4" fill="#b3d18a"/>
+            </g>
+            <g transform="translate(30,260)">
+              <rect width="420" height="60" rx="12" fill="#F1F8E2"/>
+              <circle cx="30" cy="30" r="14" fill="#5fa015"/>
+              <rect x="60" y="20" width="180" height="10" rx="5" fill="#5fa015" opacity=".8"/>
+              <rect x="60" y="36" width="200" height="8" rx="4" fill="#b3d18a"/>
+            </g>
+            <rect x="30" y="340" width="120" height="36" rx="10" fill="#80c41c"/>
+            <rect x="48" y="352" width="84" height="12" rx="6" fill="#fff" opacity=".9"/>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <span class="pill">Diferenciador</span>
+        <h3 style="margin-top:10px">Aplicamos pruebas de tamizaje psicológico</h3>
+        <p>Identificamos a tiempo los riesgos psicosociales y de salud mental con instrumentos validados. Entregamos a Recursos Humanos un tablero con resultados agregados y rutas de intervención individualizadas.</p>
+        <ul class="check-list">
+          <li><span class="ch">✓</span><span><strong>Batería de Riesgo Psicosocial</strong> según Resolución 2646 de 2008 (formas A, B, extralaboral y estrés).</span></li>
+          <li><span class="ch">✓</span><span><strong>Tamizaje en ansiedad y depresión</strong> con escalas validadas (PHQ-9, GAD-7) y triage automatizado.</span></li>
+          <li><span class="ch">✓</span><span><strong>Detección de burnout</strong> con seguimiento longitudinal por área, cargo y antigüedad.</span></li>
+          <li><span class="ch">✓</span><span><strong>Derivación inmediata</strong> a psicología o psiquiatría según severidad detectada.</span></li>
+        </ul>
+        <div style="margin-top:22px">
+          <a href="#contacto" class="btn btn-accent">Solicitar piloto de tamizaje</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3) TELEMEDICINA -->
+<section class="block alt" id="telemedicina">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">03 · Telemedicina particular</span>
+        <h2>Cuidado conectado, donde y cuando lo necesiten</h2>
+      </div>
+      <p class="lead">Atención médica a la distancia con profesionales certificados para condiciones agudas, crónicas y especialidades. Sin filas, con historia clínica digital y receta electrónica.</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Atención 24/7 y cuidado primario</h3>
+        <p>Consulta médica para condiciones comunes — gripa, dolor, infecciones — con receta electrónica y orden de exámenes.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.35-7-10a5 5 0 019-3 5 5 0 019 3c0 5.65-7 10-7 10z" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Salud mental virtual</h3>
+        <p>Red de psicólogos y psiquiatras licenciados para ansiedad, depresión y manejo de estrés.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 12h4l2-5 4 10 2-5h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Manejo de enfermedades crónicas</h3>
+        <p>Programas para diabetes, hipertensión, sobrepeso y prevención cardiovascular con seguimiento digital continuo.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Dermatología</h3>
+        <p>Diagnóstico dermatológico por imagen con dermatólogos especialistas. Resultados en horas, no semanas.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M5 5h14v14H5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Segundas opiniones médicas</h3>
+        <p>Concepto experto en casos complejos para confirmar diagnóstico y plan de tratamiento.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Nutrición y hábitos saludables</h3>
+        <p>Acompañamiento nutricional, programas de sueño, cesación de tabaco y manejo del estrés.</p>
+      </div>
+    </div>
+
+    <div style="height:48px"></div>
+
+    <div class="feature">
+      <div>
+        <span class="pill">Cómo funciona</span>
+        <h3 style="margin-top:10px">Una experiencia simple para tus colaboradores</h3>
+        <p>Tu equipo accede desde su celular o computador en cualquier momento, sin filas y con respaldo de historia clínica digital.</p>
+      </div>
+      <div class="feature-img">
+        <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="600" height="480" fill="#d8eef3"/>
+          <g transform="translate(120,60)">
+            <rect width="240" height="380" rx="32" fill="#fff" stroke="#cfe4ea" stroke-width="2"/>
+            <rect x="20" y="40" width="200" height="140" rx="14" fill="#E4F4F8"/>
+            <circle cx="120" cy="110" r="38" fill="#00a0c6"/>
+            <rect x="76" y="156" width="88" height="10" rx="5" fill="#007a99"/>
+            <rect x="20" y="200" width="200" height="50" rx="12" fill="#F3F8FA"/>
+            <rect x="36" y="216" width="100" height="8" rx="4" fill="#9bc8d4"/>
+            <rect x="36" y="232" width="140" height="8" rx="4" fill="#cfe4ea"/>
+            <rect x="20" y="262" width="200" height="50" rx="12" fill="#F1F8E2"/>
+            <rect x="36" y="278" width="100" height="8" rx="4" fill="#b3d18a"/>
+            <rect x="36" y="294" width="140" height="8" rx="4" fill="#dceabf"/>
+            <rect x="20" y="324" width="200" height="36" rx="10" fill="#80c41c"/>
+            <rect x="76" y="338" width="88" height="8" rx="4" fill="#fff" opacity=".9"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h4>Accede</h4><p>Ingresa desde la app o web con tu correo corporativo.</p></div>
+      <div class="step"><div class="num">2</div><h4>Agenda</h4><p>Elige especialidad y horario, o solicita atención inmediata.</p></div>
+      <div class="step"><div class="num">3</div><h4>Consulta</h4><p>Videoconsulta segura con receta electrónica y orden de exámenes.</p></div>
+      <div class="step"><div class="num">4</div><h4>Seguimiento</h4><p>Historia clínica digital y planes de cuidado continuos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4) PLATAFORMAS / SOFTWARE -->
+<section class="block" id="tecnologia">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">04 · Plataformas y software médico</span>
+        <h2>Tecnología propia diseñada para el sector salud</h2>
+      </div>
+      <p class="lead">No somos solo proveedores de servicios: construimos las plataformas que los soportan. Cuatro productos en producción que resuelven problemas reales de IPS, empresas y clínicas.</p>
+    </div>
+
+    <div class="grid grid-2">
+
+      <article class="product brs">
+        <div class="logo">BRS</div>
+        <div>
+          <h3>BRS — Batería de Riesgo Psicosocial</h3>
+          <p>Aplicación web para evaluar factores de riesgo psicosocial según la <strong>Resolución 2646 de 2008</strong> del Ministerio de la Protección Social. Aplicación digital, calificación automática e informes ejecutivos por área.</p>
+          <div class="meta">
+            <span class="pill">Forma A · 123 preguntas</span>
+            <span class="pill">Forma B · 97 preguntas</span>
+            <span class="pill">Extralaboral · 31</span>
+            <span class="pill">Estrés · 31</span>
+            <span class="pill">PostgreSQL · Next.js</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product bod">
+        <div class="logo">CB</div>
+        <div>
+          <h3>Consulta Bodytech — Videoconsulta médica</h3>
+          <p>Plataforma de videollamadas profesionales construida con <strong>Twilio Video</strong>, React y Node.js. Pensada para consultas médicas remotas con autenticación segura y panel médico integrado.</p>
+          <div class="meta">
+            <span class="pill">Twilio Video</span>
+            <span class="pill">JWT · Tokens seguros</span>
+            <span class="pill">Multi-participante</span>
+            <span class="pill">Panel médico</span>
+            <span class="pill">Análisis postural</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product bsl">
+        <div class="logo">BSL</div>
+        <div>
+          <h3>BSL Plataforma 2 — Sistema médico ocupacional</h3>
+          <p>Sistema en Node.js + Express + PostgreSQL para capturar y administrar información médica de pacientes en procesos ocupacionales. Integra agendamiento, WhatsApp, validador de pagos y contabilidad (Alegra).</p>
+          <div class="meta">
+            <span class="pill">Captura clínica</span>
+            <span class="pill">Agendamiento</span>
+            <span class="pill">WhatsApp Twilio</span>
+            <span class="pill">Integración Alegra</span>
+            <span class="pill">PostgreSQL</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="product rip">
+        <div class="logo">RIP</div>
+        <div>
+          <h3>RIPS Digital — SaaS multi-tenant para IPS</h3>
+          <p>Plataforma para que cualquier IPS en Colombia genere sus RIPS conforme a la <strong>Resolución 2275 de 2023</strong>. Incluye catálogos oficiales CUPS, CIE-10 y códigos DANE listos para usar.</p>
+          <div class="meta">
+            <span class="pill">Multi-tenant</span>
+            <span class="pill">Resolución 2275/2023</span>
+            <span class="pill">CUPS · CIE-10 · DANE</span>
+            <span class="pill">Next.js 15 · Drizzle</span>
+            <span class="pill">NextAuth v5</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="height:36px"></div>
+    <div class="card" style="background:linear-gradient(135deg,#F7FBFE,#fff);border-style:dashed">
+      <h3 style="margin-bottom:6px">¿Necesitas un desarrollo a la medida?</h3>
+      <p style="margin-bottom:14px">Construimos software clínico, ocupacional y administrativo con cumplimiento normativo, integraciones con WhatsApp, pasarelas de pago, historia clínica electrónica y módulos de facturación.</p>
+      <div><a href="#contacto" class="btn btn-accent">Cuéntanos tu caso</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="block alt">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Por qué elegirnos</span>
+        <h2>Un único aliado para todo el ciclo de bienestar</h2>
+      </div>
+      <p class="lead">Combinamos atención médica, plataforma tecnológica y cumplimiento normativo. Esto significa menos proveedores, mejor experiencia para tus colaboradores y datos confiables para Recursos Humanos.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="card tinted">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+        <h3>Cumplimiento normativo</h3>
+        <p>SG-SST, Resolución 2646, Resolución 2275 y habilitación de IPS — soluciones que pasan auditoría.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12c2-4 6-7 9-7s7 3 9 7c-2 4-6 7-9 7s-7-3-9-7z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Visibilidad para RR. HH.</h3>
+        <p>Tableros con indicadores de salud y bienestar para tomar decisiones basadas en datos.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2"/></svg></div>
+        <h3>Cobertura nacional</h3>
+        <p>Sedes propias, aliados estratégicos y unidad móvil para llegar donde está tu operación.</p>
+      </div>
+      <div class="card tinted">
+        <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 10h8M8 14h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+        <h3>Tecnología propia</h3>
+        <p>No revendemos software: lo construimos. Eso nos permite integrarnos a tus procesos sin fricciones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="block" style="padding-top:0">
+  <div class="container">
+    <div class="cta-band">
+      <div>
+        <h2 style="margin-bottom:8px">Diseñemos juntos el programa de bienestar de tu empresa</h2>
+        <p>Agenda una sesión de 30 minutos con nuestro equipo. Analizamos tu operación y te presentamos una propuesta integral con cobertura, tecnología y cumplimiento.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:2">
+        <a href="#contacto" class="btn btn-accent">Agendar consultoría
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#tecnologia" class="btn btn-ghost">Ver plataformas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="block alt" id="contacto">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Contacto</span>
+        <h2>Hablemos de tu empresa</h2>
+      </div>
+      <p class="lead">Cuéntanos cuántos colaboradores tienes, en qué ciudades operas y qué servicios te interesan. Te respondemos en menos de 24 horas hábiles.</p>
+    </div>
+
+    <div class="contact">
+      <div class="contact-info">
+        <div class="info-row">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 7l9 6 9-6M3 7v10h18V7M3 7l9-4 9 4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div><h4>Correo comercial</h4><a href="mailto:comercial@bienestarsaludlaboral.co">comercial@bienestarsaludlaboral.co</a></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a12 12 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+          <div><h4>Línea de atención</h4><a href="tel:+576015550000">+57 (601) 555 0000</a> · WhatsApp empresarial</div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/></svg></div>
+          <div><h4>Sede principal</h4>Bogotá, Colombia · Cobertura nacional con sedes y aliados</div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+          <div><h4>Horario</h4>Lunes a viernes 7:00–19:00 · Telemedicina 24/7</div>
+        </div>
+        <div class="badge-list" style="margin-top:14px">
+          <span>HIPAA-ready</span><span>Habeas Data</span><span>Habilitación IPS</span><span>SG-SST</span>
+        </div>
+      </div>
+
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='¡Enviado! Te contactamos pronto.';this.querySelector('button').disabled=true;">
+        <div class="row">
+          <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" required placeholder="Tu nombre"/></div>
+          <div class="field"><label for="empresa">Empresa</label><input id="empresa" required placeholder="Nombre de la empresa"/></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="email">Correo corporativo</label><input id="email" type="email" required placeholder="tu@empresa.com"/></div>
+          <div class="field"><label for="telefono">Teléfono</label><input id="telefono" placeholder="(+57) 300 000 0000"/></div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="empleados">Número de colaboradores</label>
+            <select id="empleados">
+              <option>Menos de 50</option>
+              <option>50 a 200</option>
+              <option>200 a 1.000</option>
+              <option>Más de 1.000</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="servicio">Servicio de interés</label>
+            <select id="servicio">
+              <option>Medicina ocupacional</option>
+              <option>Salud mental y tamizaje</option>
+              <option>Telemedicina particular</option>
+              <option>Plataformas y software médico</option>
+              <option>Programa integral</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="mensaje">Cuéntanos tu necesidad</label>
+          <textarea id="mensaje" rows="4" placeholder="Ciudad de operación, periodicidad, particularidades..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar solicitud
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="color:#fff">
+          <img src="bsl-logo.png" alt="BSL" class="brand-mark" style="background:#fff;padding:6px;border-radius:10px"/>
+          <span>
+            <span class="brand-name" style="color:#fff">Bienestar &amp; Salud Laboral</span>
+            <span class="brand-sub" style="color:#9bb5bd">Soluciones integrales para empresas</span>
+          </span>
+        </div>
+        <p style="color:#a8bcd6;margin-top:14px;max-width:36ch">Cuidamos la salud física y mental de tu equipo con servicios médicos, telemedicina y tecnología propia.</p>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#medicina">Medicina ocupacional</a></li>
+          <li><a href="#salud-mental">Salud mental</a></li>
+          <li><a href="#telemedicina">Telemedicina</a></li>
+          <li><a href="#tecnologia">Plataformas médicas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Plataformas</h4>
+        <ul>
+          <li><a href="#tecnologia">BRS · Riesgo psicosocial</a></li>
+          <li><a href="#tecnologia">Consulta Bodytech</a></li>
+          <li><a href="#tecnologia">BSL Plataforma 2</a></li>
+          <li><a href="#tecnologia">RIPS Digital</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#contacto">Solicitar propuesta</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> Bienestar y Salud Laboral. Todos los derechos reservados.</span>
+      <span>Hecho en Colombia · Cobertura nacional</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.card,.ov-card,.product,.feature,.step,.cta-band').forEach(el=>{
+    el.classList.add('reveal'); io.observe(el);
+  });
+</script>
+</body>
+</html>
