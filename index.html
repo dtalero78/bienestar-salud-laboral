@@ -93,15 +93,10 @@
   .nav-links a{color:var(--ink);font-weight:500;font-size:.95rem}
   .nav-links a:hover{color:var(--accent-2);text-decoration:none}
   .nav-cta{display:flex;gap:10px;align-items:center}
-  .menu-toggle{display:none;background:none;border:0;font-size:1.5rem;color:var(--navy);cursor:pointer}
+  .menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:0}
   @media (max-width:880px){
     .nav-links{display:none}
     .nav-cta .btn-ghost{display:none}
-    .menu-toggle{display:block}
-    .nav.open .nav-links{
-      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
-      background:#fff;border-bottom:1px solid var(--line);padding:16px 24px;gap:14px;
-    }
   }
 
   /* HERO */
@@ -363,6 +358,168 @@
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
   .reveal.in{opacity:1;transform:none}
 
+  /* ===== MOBILE REDESIGN ===== */
+  @media (max-width:880px){
+    .container{padding:0 18px}
+
+    /* HEADER */
+    .nav-inner{padding:10px 0;gap:10px}
+    .brand-mark{height:46px}
+    .menu-toggle{
+      display:grid;place-items:center;width:42px;height:42px;border-radius:12px;
+      background:var(--bg-alt);font-size:0;border:1px solid var(--line);
+    }
+    .menu-toggle::before{
+      content:"";width:18px;height:14px;
+      background:
+        linear-gradient(var(--navy-2),var(--navy-2)) top/100% 2px no-repeat,
+        linear-gradient(var(--navy-2),var(--navy-2)) center/100% 2px no-repeat,
+        linear-gradient(var(--navy-2),var(--navy-2)) bottom/100% 2px no-repeat;
+      transition:.2s;
+    }
+    .nav.open .menu-toggle{background:var(--navy);border-color:var(--navy)}
+    .nav.open .menu-toggle::before{
+      background:
+        linear-gradient(var(--lime),var(--lime)) center/100% 2px no-repeat,
+        linear-gradient(var(--lime),var(--lime)) center/100% 2px no-repeat;
+      transform:rotate(45deg);
+    }
+    .nav-cta{gap:8px}
+    .nav-cta .btn-primary{padding:10px 14px;font-size:.84rem;border-radius:999px}
+
+    /* DRAWER */
+    .nav.open{box-shadow:0 12px 24px rgba(10,31,68,.08)}
+    .nav.open .nav-links{
+      display:flex;flex-direction:column;align-items:stretch;
+      position:absolute;top:100%;left:0;right:0;
+      background:#fff;padding:8px 18px 18px;gap:0;
+      border-top:1px solid var(--line);
+      max-height:calc(100vh - 70px);overflow-y:auto;
+    }
+    .nav.open .nav-links a{
+      padding:16px 4px;font-size:1.02rem;font-weight:600;
+      border-bottom:1px solid var(--line);color:var(--ink);
+    }
+    .nav.open .nav-links a:last-child{border-bottom:0}
+
+    /* HERO */
+    .hero{padding:34px 0 48px}
+    .hero-grid{gap:32px}
+    .hero h1{font-size:2.15rem;line-height:1.08;letter-spacing:-.022em}
+    .hero p.lead{font-size:1rem;line-height:1.5;margin:14px 0 22px}
+    .hero-tag{font-size:.74rem;padding:5px 12px;margin-bottom:16px}
+    .hero-cta{flex-direction:column;width:100%;gap:10px}
+    .hero-cta .btn{width:100%;justify-content:center;padding:15px 22px}
+    .hero-stats{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:100%}
+    .stat{padding:12px}
+    .stat b{font-size:1.25rem}
+    .stat span{font-size:.74rem;line-height:1.2}
+    .hero-photo{aspect-ratio:1/1;max-width:440px;margin:0 auto;border-radius:20px}
+
+    /* TRUST STRIP */
+    .trust{padding:20px 0}
+    .trust-inner{gap:14px;flex-direction:column;align-items:flex-start}
+    .trust-label{font-size:.72rem}
+    .trust-logos{gap:14px 22px;width:100%}
+    .trust-logo{font-size:.85rem;flex:0 0 calc(50% - 12px)}
+    .trust-logo small{display:block;font-size:.7rem;font-weight:500;color:var(--muted)}
+
+    /* SECTIONS */
+    section.block{padding:54px 0}
+    .section-head{margin-bottom:30px;gap:12px}
+    .eyebrow{font-size:.72rem;letter-spacing:.12em;margin-bottom:10px}
+    h1{font-size:2.15rem}
+    h2{font-size:1.7rem;line-height:1.15}
+    h3{font-size:1.12rem}
+    .lead{font-size:.98rem}
+
+    /* SERVICE OVERVIEW CARDS */
+    .ov-card{padding:22px;border-radius:18px}
+    .ov-card .num{top:14px;right:18px;font-size:1.7rem}
+    .ov-card .ring{width:46px;height:46px;border-radius:12px;margin-bottom:10px}
+
+    /* GENERIC CARDS */
+    .card{padding:20px;border-radius:16px}
+    .card .icon{width:42px;height:42px;border-radius:11px}
+
+    /* FEATURE BLOCKS */
+    .feature,.feature.reverse{gap:24px}
+    .feature-img{aspect-ratio:4/3;border-radius:18px}
+    .check-list{gap:10px}
+    .check-list li{font-size:.95rem}
+
+    /* PROCESS STEPS */
+    .steps{gap:12px;margin-top:24px}
+    .step{padding:18px;border-radius:16px}
+    .step .num{width:30px;height:30px;font-size:.92rem}
+    .step h4{font-size:1rem}
+    .step p{font-size:.9rem;margin:6px 0 0}
+
+    /* PRODUCT CARDS (platforms) */
+    .product{padding:22px;grid-template-columns:54px 1fr;gap:14px;border-radius:18px}
+    .product .logo{width:54px;height:54px;font-size:.95rem;border-radius:14px}
+    .product h3{font-size:1.05rem;line-height:1.25}
+    .product p{font-size:.92rem}
+    .product .meta .pill{font-size:.72rem;padding:3px 9px}
+
+    /* PSYCH TEST CARDS */
+    .test-grid{gap:16px;margin-top:22px}
+    .test-card{border-radius:18px}
+    .test-head{padding:18px 22px 14px}
+    .test-head h3{font-size:1.3rem;margin:0}
+    .test-head .sub{font-size:.82rem}
+    .test-body{padding:18px 22px 22px;gap:12px}
+    .test-row{grid-template-columns:1fr;gap:2px;padding:10px 0;font-size:.88rem}
+    .test-row dt{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+    .test-row dd{font-size:.92rem}
+
+    /* CTA BAND */
+    .cta-band{padding:32px 24px;border-radius:22px;gap:24px}
+    .cta-band h2{font-size:1.55rem}
+    .cta-band p{font-size:.98rem}
+    .cta-band > div:last-child{flex-direction:column;width:100%}
+    .cta-band .btn{width:100%;justify-content:center}
+
+    /* CONTACT */
+    .contact{gap:30px}
+    .contact-info{gap:14px}
+    .info-row{gap:12px}
+    .info-row .ic{width:40px;height:40px;flex-basis:40px;border-radius:11px}
+    .info-row h4{margin-bottom:4px;font-size:.95rem}
+    .form{padding:22px;border-radius:18px}
+    .form .row{margin-bottom:10px;gap:10px}
+    .field input,.field select,.field textarea{padding:11px 13px;font-size:.95rem}
+
+    /* FOOTER */
+    footer{padding:44px 0 26px}
+    .foot-grid{gap:28px}
+    .foot-bottom{margin-top:30px;font-size:.78rem;flex-direction:column;align-items:flex-start;gap:6px}
+  }
+
+  /* Phones < 480 */
+  @media (max-width:480px){
+    .container{padding:0 16px}
+    .brand-mark{height:42px}
+    .hero{padding:28px 0 42px}
+    .hero h1{font-size:1.95rem}
+    .hero-photo{max-width:100%;aspect-ratio:1/1}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:8px}
+    .hero-stats .stat:last-child{grid-column:1/-1}
+    h2{font-size:1.5rem}
+    h3{font-size:1.05rem}
+    section.block{padding:46px 0}
+    .ov-card,.card,.product,.step,.test-head,.test-body,.form{padding:18px}
+    .test-head{padding:16px 18px 12px}
+    .test-body{padding:16px 18px 20px}
+    .product{grid-template-columns:48px 1fr;gap:12px;padding:18px}
+    .product .logo{width:48px;height:48px;font-size:.85rem}
+    .cta-band{padding:26px 20px}
+    .cta-band h2{font-size:1.4rem}
+    .feature-img{aspect-ratio:5/4}
+    .trust-logo{flex:0 0 100%}
+    .ov-card .num{font-size:1.5rem}
+  }
+
   /* SVG decorative */
   .blob{position:absolute;pointer-events:none;opacity:.5}
 </style>
@@ -385,7 +542,7 @@
     <div class="nav-cta">
       <a href="https://wa.me/573153369631?text=Hola%2C%20quiero%20hablar%20con%20un%20asesor%20de%20BSL." target="_blank" rel="noopener" class="btn btn-ghost">Hablar con un asesor</a>
       <a href="#contacto" class="btn btn-primary">Solicitar propuesta</a>
-      <button class="menu-toggle" aria-label="Abrir menú" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="(function(b){var n=document.getElementById('nav');var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú');document.body.style.overflow=o?'hidden':'';})(this)"></button>
     </div>
   </div>
 </header>
@@ -1174,6 +1331,19 @@
   },{threshold:.12});
   document.querySelectorAll('.card,.ov-card,.product,.feature,.step,.cta-band').forEach(el=>{
     el.classList.add('reveal'); io.observe(el);
+  });
+
+  // Close mobile drawer on link tap
+  document.querySelectorAll('#nav .nav-links a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      const nav=document.getElementById('nav');
+      if(nav.classList.contains('open')){
+        nav.classList.remove('open');
+        const btn=nav.querySelector('.menu-toggle');
+        if(btn){btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','Abrir menú');}
+        document.body.style.overflow='';
+      }
+    });
   });
 </script>
 </body>
