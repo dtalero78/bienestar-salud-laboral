@@ -332,6 +332,29 @@
     background:rgba(255,255,255,.06);color:#cfd9e8;padding:6px 10px;border-radius:8px;font-size:.78rem;
   }
 
+  /* PSYCH TEST MODULES */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
+  @media (max-width:980px){.test-grid{grid-template-columns:1fr}}
+  .test-card{
+    background:#fff;border:1px solid var(--line);border-radius:20px;padding:0;overflow:hidden;
+    transition:.2s;display:flex;flex-direction:column;
+  }
+  .test-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#cfe1ee}
+  .test-head{
+    padding:22px 24px 18px;color:#fff;
+    background:linear-gradient(135deg,var(--cyan),var(--accent-2));
+  }
+  .test-card.t-flowers .test-head{background:linear-gradient(135deg,var(--green),var(--teal-dark))}
+  .test-card.t-scl .test-head{background:linear-gradient(135deg,var(--accent-2),var(--navy))}
+  .test-head h3{color:#fff;margin:0 0 4px}
+  .test-head .sub{font-size:.85rem;opacity:.9;font-weight:500}
+  .test-body{padding:20px 24px 22px;flex:1;display:flex;flex-direction:column;gap:14px}
+  .test-row{display:grid;grid-template-columns:130px 1fr;gap:10px;font-size:.88rem;padding:8px 0;border-bottom:1px dashed var(--line)}
+  .test-row:last-of-type{border-bottom:0}
+  .test-row dt{color:var(--muted);font-weight:600}
+  .test-row dd{margin:0;color:var(--ink-2)}
+  .test-card .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+
   /* Subtle reveal */
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
   .reveal.in{opacity:1;transform:none}
@@ -925,6 +948,92 @@
             <span class="pill">CUPS · CIE-10 · DANE</span>
             <span class="pill">Next.js 15 · Drizzle</span>
             <span class="pill">NextAuth v5</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- PSYCH TEST MODULES -->
+    <div style="height:64px"></div>
+    <div class="section-head" style="margin-bottom:0">
+      <div>
+        <span class="eyebrow">Módulos de pruebas psicológicas</span>
+        <h2>Tamizaje y evaluación clínica diseñados para empresas</h2>
+      </div>
+      <p class="lead">Tres instrumentos validados, listos para aplicar online a tus colaboradores con resultados automatizados, derivación clínica y tableros agregados para Recursos Humanos.</p>
+    </div>
+
+    <div class="test-grid">
+
+      <article class="test-card t-adc">
+        <div class="test-head">
+          <h3>ADC</h3>
+          <div class="sub">Ansiedad, Depresión, Congruencia</div>
+        </div>
+        <div class="test-body">
+          <p style="margin:0">Tamizaje rápido de alerta en salud mental: ansiedad, depresión y congruencia de valores y conducta.</p>
+          <dl style="margin:0">
+            <div class="test-row"><dt>Duración</dt><dd>10 min por prueba (3 pruebas)</dd></div>
+            <div class="test-row"><dt>Aplicación</dt><dd>Online, autoaplicable o verbal · español · &gt;16 años</dd></div>
+            <div class="test-row"><dt>Áreas evaluadas</dt><dd>Ansiedad (cognitivo, fisiológico, afectivo, conductual); depresión (sí mismo, mundo, futuro); congruencia (familia, relaciones, autocuidado, ocupacional).</dd></div>
+            <div class="test-row"><dt>Formato</dt><dd>Likert 4 opciones (de acuerdo a en desacuerdo)</dd></div>
+            <div class="test-row"><dt>Población</dt><dd>Colombiana · baremos por edad</dd></div>
+            <div class="test-row"><dt>Confiabilidad</dt><dd>Alfa de Cronbach: .82–.90 según escala</dd></div>
+            <div class="test-row"><dt>Validez</dt><dd>Análisis factorial y correlación con variables clínicas</dd></div>
+          </dl>
+          <div class="meta">
+            <span class="pill">Adaptada a Colombia</span>
+            <span class="pill">Tamizaje laboral</span>
+            <span class="pill">Lenguaje sencillo</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="test-card t-flowers">
+        <div class="test-head">
+          <h3>Flowers</h3>
+          <div class="sub">Booraem Flowers</div>
+        </div>
+        <div class="test-body">
+          <p style="margin:0">Evaluación psicométrica de rasgos de personalidad, regulación emocional y respuestas ante el estrés.</p>
+          <dl style="margin:0">
+            <div class="test-row"><dt>Duración</dt><dd>15–20 min aprox.</dd></div>
+            <div class="test-row"><dt>Aplicación</dt><dd>Online, papel o digital · inglés · autoaplicable · &gt;16 años</dd></div>
+            <div class="test-row"><dt>Áreas evaluadas</dt><dd>Rasgos de impulsividad, regulación emocional, relaciones, identidad y reactividad ante el estrés.</dd></div>
+            <div class="test-row"><dt>Formato</dt><dd>Likert 5 opciones (Nunca a Muy frecuente)</dd></div>
+            <div class="test-row"><dt>Población</dt><dd>Internacional · baremos por país</dd></div>
+            <div class="test-row"><dt>Confiabilidad</dt><dd>Típicamente &gt;.80</dd></div>
+            <div class="test-row"><dt>Validez</dt><dd>Desarrollada por psicólogos clínicos · validez de contenido y reactivo</dd></div>
+          </dl>
+          <div class="meta">
+            <span class="pill">Perfil de personalidad</span>
+            <span class="pill">Selección de personal</span>
+            <span class="pill">Manejo del estrés</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="test-card t-scl">
+        <div class="test-head">
+          <h3>SCL-90</h3>
+          <div class="sub">Symptom Checklist 90</div>
+        </div>
+        <div class="test-body">
+          <p style="margin:0">Detección amplia de síntomas psicológicos y psiquiátricos en 9 dimensiones clínicas.</p>
+          <dl style="margin:0">
+            <div class="test-row"><dt>Duración</dt><dd>12–15 min</dd></div>
+            <div class="test-row"><dt>Aplicación</dt><dd>Online, papel o digital · autoaplicable · &gt;13 años</dd></div>
+            <div class="test-row"><dt>Áreas evaluadas</dt><dd>Somatización, obsesivo-compulsivo, sensibilidad interpersonal, depresión, ansiedad, hostilidad, fobia, paranoia y psicoticismo.</dd></div>
+            <div class="test-row"><dt>Formato</dt><dd>Likert 5 opciones (Nada a Mucho)</dd></div>
+            <div class="test-row"><dt>Población</dt><dd>Internacional · baremos por país</dd></div>
+            <div class="test-row"><dt>Confiabilidad</dt><dd>Alfa de Cronbach: &gt;.85</dd></div>
+            <div class="test-row"><dt>Validez</dt><dd>Validación internacional · análisis factorial y estudios clínicos</dd></div>
+          </dl>
+          <div class="meta">
+            <span class="pill">Evaluación profunda</span>
+            <span class="pill">Respaldo científico</span>
+            <span class="pill">Comparación internacional</span>
           </div>
         </div>
       </article>
