@@ -2,7 +2,7 @@
 
 Sitio web estático corporativo de **Bienestar y Salud Laboral (BSL)**.
 
-- **Dominio:** [www.bienestarsaludlaboral.com](https://www.bienestarsaludlaboral.com)
+- **Dominio:** [bienestarsaludlaboral.com](https://bienestarsaludlaboral.com)
 - **Hosting:** GitHub Pages
 - **Stack:** HTML, CSS y JS sin dependencias (single page)
 
