@@ -251,6 +251,10 @@
   .product.bsl .logo{background:linear-gradient(135deg,var(--cyan),var(--accent-2))}
   .product.rip .logo{background:linear-gradient(135deg,var(--accent-2),var(--navy))}
   .product .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .product h3 a{color:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:6px}
+  .product h3 a:hover{color:var(--accent-2);text-decoration:none}
+  .product h3 a .ext{opacity:.55;transition:.15s}
+  .product h3 a:hover .ext{opacity:1;transform:translate(2px,-2px)}
   .product .meta .pill{background:#F1F5F9;color:var(--ink-2)}
 
   /* PROCESS / STEPS */
@@ -510,8 +514,8 @@
             </g>
             <text x="28" y="130" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">Plataformas</text>
             <text x="28" y="154" fill="#003a4a" font-family="Figtree,Inter,sans-serif" font-size="20" font-weight="800">médicas</text>
-            <text x="28" y="182" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">BRS · Consulta Bodytech</text>
-            <text x="28" y="200" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">BSL · RIPS Digital</text>
+            <text x="28" y="182" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">BRS · Mediconecta</text>
+            <text x="28" y="200" fill="#4a6770" font-family="Inter,sans-serif" font-size="12" font-weight="500">RIPS Digital · Bodytech</text>
           </g>
 
           <!-- floating heart pulse line -->
@@ -581,7 +585,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg>
         </div>
         <h3>Plataformas y software médico</h3>
-        <p>Desarrollos propios: BRS, Consulta Bodytech, BSL Plataforma 2 y RIPS Digital.</p>
+        <p>Desarrollos propios: BRS, Consulta Bodytech, Mediconecta y RIPS Digital.</p>
         <a class="btn-link" href="#tecnologia">Ver productos →</a>
       </article>
     </div>
@@ -829,7 +833,7 @@
       <article class="product brs">
         <div class="logo">BRS</div>
         <div>
-          <h3>BRS — Batería de Riesgo Psicosocial</h3>
+          <h3><a href="https://bateriariesgopsicosocial.com/" target="_blank" rel="noopener">BRS — Batería de Riesgo Psicosocial<svg class="ext" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
           <p>Aplicación web para evaluar factores de riesgo psicosocial según la <strong>Resolución 2646 de 2008</strong> del Ministerio de la Protección Social. Aplicación digital, calificación automática e informes ejecutivos por área.</p>
           <div class="meta">
             <span class="pill">Forma A · 123 preguntas</span>
@@ -857,16 +861,16 @@
       </article>
 
       <article class="product bsl">
-        <div class="logo">BSL</div>
+        <div class="logo">MC</div>
         <div>
-          <h3>BSL Plataforma 2 — Sistema médico ocupacional</h3>
-          <p>Sistema en Node.js + Express + PostgreSQL para capturar y administrar información médica de pacientes en procesos ocupacionales. Integra agendamiento, WhatsApp, validador de pagos y contabilidad (Alegra).</p>
+          <h3><a href="https://mediconecta.co/" target="_blank" rel="noopener">Mediconecta — Teleconsulta con IA para su IPS<svg class="ext" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+          <p>Plataforma de teleconsulta con inteligencia artificial diseñada para IPS. Optimiza la atención remota, integra historia clínica digital y soporte clínico asistido por IA para los profesionales de salud.</p>
           <div class="meta">
-            <span class="pill">Captura clínica</span>
-            <span class="pill">Agendamiento</span>
-            <span class="pill">WhatsApp Twilio</span>
-            <span class="pill">Integración Alegra</span>
-            <span class="pill">PostgreSQL</span>
+            <span class="pill">Teleconsulta</span>
+            <span class="pill">Inteligencia artificial</span>
+            <span class="pill">Historia clínica</span>
+            <span class="pill">Para IPS</span>
+            <span class="pill">Asistente clínico</span>
           </div>
         </div>
       </article>
@@ -874,7 +878,7 @@
       <article class="product rip">
         <div class="logo">RIP</div>
         <div>
-          <h3>RIPS Digital — SaaS multi-tenant para IPS</h3>
+          <h3><a href="https://ripsdigital.com/" target="_blank" rel="noopener">RIPS Digital — SaaS multi-tenant para IPS<svg class="ext" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
           <p>Plataforma para que cualquier IPS en Colombia genere sus RIPS conforme a la <strong>Resolución 2275 de 2023</strong>. Incluye catálogos oficiales CUPS, CIE-10 y códigos DANE listos para usar.</p>
           <div class="meta">
             <span class="pill">Multi-tenant</span>
@@ -1141,7 +1145,7 @@
         <ul>
           <li><a href="#tecnologia">BRS · Riesgo psicosocial</a></li>
           <li><a href="#tecnologia">Consulta Bodytech</a></li>
-          <li><a href="#tecnologia">BSL Plataforma 2</a></li>
+          <li><a href="https://mediconecta.co/" target="_blank" rel="noopener">Mediconecta</a></li>
           <li><a href="#tecnologia">RIPS Digital</a></li>
         </ul>
       </div>
